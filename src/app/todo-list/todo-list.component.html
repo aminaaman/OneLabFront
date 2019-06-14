@@ -1,0 +1,10 @@
+<form (submit)="addTodo($event)" class="form">
+  <input [(ngModel)]="newTodo" (keyup.enter)="newTodo=''" class="textfield" name="newTodo">
+  <h4>Add: {{newTodo}}</h4>
+  <button type="submit" (click)="addTodo()"[disabled]="newTodo===''">Add Todo</button>
+  <div *ngFor="let todo of todos">
+    <ol>
+    <li>{{todo.newTodo}}</li>
+    </ol>
+  </div>
+</form>

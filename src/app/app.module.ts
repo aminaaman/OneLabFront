@@ -2,19 +2,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { UserListComponent } from './user-list/user-list.component';
-import { UserItemComponent } from './user-item/user-item.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
+import { TodoItemComponent } from './todo-list/todo-item/todo-item.component';
+import { FormsModule } from '@angular/forms';
+
+import { FormStyle } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    UserListComponent,
-    UserItemComponent
+    TodoListComponent,
+    TodoItemComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
