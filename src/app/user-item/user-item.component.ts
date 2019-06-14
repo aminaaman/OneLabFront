@@ -13,7 +13,6 @@ export class UserItemComponent implements OnInit {
     {name: 'Aruzhan'},
     {name: 'Adelya'}
   ];
-  // @Input() user;
   @Output() userSelected: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
