@@ -2,9 +2,12 @@
   <input [(ngModel)]="newTodo" (keyup.enter)="newTodo=''" class="textfield" name="newTodo">
   <h4>Add: {{newTodo}}</h4>
   <button type="submit" (click)="addTodo()"[disabled]="newTodo===''">Add Todo</button>
-  <div *ngFor="let todo of todos">
-    <ol>
-    <li>{{todo.newTodo}}</li>
-    </ol>
-  </div>
+  <ul>
+    <li *ngFor="let todo of todos; let i=index">
+      <input type="checkbox" class="checkbox" [(ngModel)]="todo.completed" />
+    <span [ngClass]="{'checked': todo.completed}">{{ todo.newTodo }}
+    <span (click)="deleteTodo(i)" class="delete-icon">[X]
+    </li>
+  </ul>
+
 </form>

@@ -29,5 +29,13 @@ export class TodoListComponent implements OnInit {
     this.todos.push(this.todoObj);
     this.newTodo='';
   }
-
+  deleteTodo(index){
+    this.todos.splice(index, 1);
+  }
+  deleteSelectedTodos(){
+    for(var i=(this.todos.length -1); i>-1; i--)
+      if(this.todos[i].completed){
+        this.todos.splice(i, 1);
+      }
+  }
 }
