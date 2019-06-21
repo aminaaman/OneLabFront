@@ -1,22 +1,28 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
-import { TodoListComponent } from './todo-list/todo-list.component';
-import { TodoItemComponent } from './todo-list/todo-item/todo-item.component';
 import { FormsModule } from '@angular/forms';
-
+import { RouterModule } from '@angular/router'
 import { FormStyle } from '@angular/common';
+
+import { HeaderComponent } from './header/header.component';
+import { NewsComponent } from './news/news.component';
+
+const routes = [
+  {path: '', component:HeaderComponent},
+  {path: 'news', component: NewsComponent}
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodoListComponent,
-    TodoItemComponent
+    HeaderComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
