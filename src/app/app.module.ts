@@ -1,19 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http'
 import { AppComponent } from './app.component';
-import { HighlightDirective } from './highlight.directive';
+import { Myinterceptor } from './myinterceptor.service';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HighlightDirective
+    AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: Myinterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
